@@ -16,11 +16,8 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   flutter_riverpod: ^2.6.1
-  firebase_core: ^4.2.1
-  cloud_firestore: ^6.1.1
   riverpod_annotation: ^2.6.1
   json_serializable:
-  freezed_annotation:
   mockito: ^5.4.4
 
 dev_dependencies:
@@ -29,7 +26,6 @@ dev_dependencies:
 
   flutter_lints: ^5.0.0
   build_runner:
-  freezed:
 
 
 flutter:
