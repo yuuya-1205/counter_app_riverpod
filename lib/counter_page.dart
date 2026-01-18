@@ -25,6 +25,7 @@ class CounterPage extends ConsumerWidget {
           Text('Counter: $counter'),
           SizedBox(height: 20),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () {
@@ -32,7 +33,7 @@ class CounterPage extends ConsumerWidget {
                 },
                 child: const Text('Increment'),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 30),
               ElevatedButton(
                 onPressed: () {
                   ref.read(counterProvider.notifier).decrement();
