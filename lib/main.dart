@@ -1,9 +1,10 @@
 import 'package:counter_app_riverpod/counter_page.dart';
+import 'package:counter_app_riverpod/provider_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(ProviderScope(observers: [], child: const MyApp()));
+  runApp(ProviderScope(observers: [LoggerObserver()], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
