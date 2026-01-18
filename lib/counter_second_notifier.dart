@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final counterProvider = NotifierProvider<CounterNotifier, int>(
-  () => CounterNotifier(),
+final counterSecondProvider = NotifierProvider<CounterSecondNotifier, int>(
+  () => CounterSecondNotifier(),
 );
 
-class CounterNotifier extends Notifier<int> {
+class CounterSecondNotifier extends Notifier<int> {
   @override
   int build() {
     debugPrint('SwitchNotifierSecond: build() が実行された。');

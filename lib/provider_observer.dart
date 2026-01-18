@@ -3,15 +3,21 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LoggerObserver extends ProviderObserver {
   @override
+  /// この関数について教えて
   void didAddProvider(
+    // 参照しているProviderの情報
     ProviderBase provider,
+    // 初期値
     Object? value,
     ProviderContainer container,
   ) {
+    /// 参照しているProviderの情報 全てのProviderを参照している。
+    debugPrint('$provider was added');
     debugPrint('didAddProvider: $provider value=$value');
   }
 
   @override
+  // これがわからない。何をするのかな？
   void didUpdateProvider(
     ProviderBase provider,
     Object? previousValue,

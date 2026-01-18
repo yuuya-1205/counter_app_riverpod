@@ -1,4 +1,5 @@
 import 'package:counter_app_riverpod/counter_notifier.dart';
+import 'package:counter_app_riverpod/counter_second_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,6 +9,7 @@ class CounterPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final counter = ref.watch(counterProvider);
+    final counterSecond = ref.watch(counterSecondProvider);
     ref.listen(counterProvider, (_, next) {
       /// 5の倍数の時、アラートを表示させる。
       if (next % 5 == 0) {
@@ -23,6 +25,26 @@ class CounterPage extends ConsumerWidget {
       body: Column(
         children: [
           Text('Counter: $counter'),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  ref.read(counterProvider.notifier).increment();
+                },
+                child: const Text('Increment'),
+              ),
+              SizedBox(width: 30),
+              ElevatedButton(
+                onPressed: () {
+                  ref.read(counterProvider.notifier).decrement();
+                },
+                child: const Text('Decrement'),
+              ),
+            ],
+          ),
+          Text('CounterSecond: $counterSecond'),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

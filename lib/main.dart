@@ -4,7 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(ProviderScope(observers: [LoggerObserver()], child: const MyApp()));
+  runApp(
+    /// 全体の監視
+    ProviderScope(
+      /// 観察者を追加
+      observers: [
+        /// ログの出力
+        LoggerObserver(),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
