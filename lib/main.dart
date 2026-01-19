@@ -1,4 +1,4 @@
-import 'package:counter_app_riverpod/counter_page.dart';
+import 'package:counter_app_riverpod/view/counter_page.dart';
 import 'package:counter_app_riverpod/provider_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
