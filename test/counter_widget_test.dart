@@ -15,6 +15,13 @@ void main() {
 
     expect(find.text('Counter Page'), findsOneWidget);
     expect(find.text('Counter: 0'), findsOneWidget);
-    expect(find.text('CounterSecond: 0'), findsOneWidget);
+  });
+  testWidgets('CounterSecondPage に遷移できる。', (tester) async {
+    await pumpApp(tester);
+
+    await tester.tap(find.text('CounterSecondPage'));
+    await tester.pump();
+
+    expect(find.text('Counter Page'), findsOneWidget);
   });
 }

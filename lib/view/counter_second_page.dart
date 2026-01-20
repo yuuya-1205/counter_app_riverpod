@@ -1,4 +1,3 @@
-import 'package:counter_app_riverpod/logic/counter_notifier.dart';
 import 'package:counter_app_riverpod/logic/counter_second_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,14 +29,14 @@ class CounterSecondPage extends ConsumerWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  ref.read(counterProvider.notifier).increment();
+                  ref.read(counterSecondProvider.notifier).increment();
                 },
                 child: const Text('Increment'),
               ),
               SizedBox(width: 30),
               ElevatedButton(
                 onPressed: () {
-                  ref.read(counterProvider.notifier).decrement();
+                  ref.read(counterSecondProvider.notifier).decrement();
                 },
                 child: const Text('Decrement'),
               ),
