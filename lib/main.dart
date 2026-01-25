@@ -1,5 +1,4 @@
 import 'package:counter_app_riverpod/view/counter_page.dart';
-import 'package:counter_app_riverpod/provider_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,7 +9,7 @@ void main() {
       /// 観察者を追加
       observers: [
         /// ログの出力
-        LoggerObserver(),
+        //   LoggerObserver(),
       ],
       child: const MyApp(),
     ),

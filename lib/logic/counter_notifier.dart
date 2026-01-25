@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final counterProvider = NotifierProvider.autoDispose<CounterNotifier, int>(
+final counterProvider = NotifierProvider<CounterNotifier, int>(
   () => CounterNotifier(),
 );
 
-class CounterNotifier extends AutoDisposeNotifier<int> {
+class CounterNotifier extends Notifier<int> {
   @override
   int build() {
     debugPrint('counterProvider: build() が実行された。');
