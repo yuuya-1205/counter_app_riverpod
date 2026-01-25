@@ -1,5 +1,4 @@
 import 'package:counter_app_riverpod/logic/counter_notifier.dart';
-import 'package:counter_app_riverpod/view/counter_second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -44,15 +43,6 @@ class CounterPage extends ConsumerWidget {
             ],
           ),
           SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => CounterSecondPage()),
-              );
-            },
-            child: const Text('CounterSecondPage'),
-          ),
         ],
       ),
     );

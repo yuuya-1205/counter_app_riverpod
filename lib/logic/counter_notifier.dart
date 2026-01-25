@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final counterProvider = NotifierProvider<CounterNotifier, int>(
+final counterProvider = NotifierProvider.autoDispose<CounterNotifier, int>(
   () => CounterNotifier(),
 );
 
-class CounterNotifier extends Notifier<int> {
+class CounterNotifier extends AutoDisposeNotifier<int> {
   @override
   int build() {
-    debugPrint('SwitchNotifierSecond: build() が実行された。');
+    debugPrint('counterProvider: build() が実行された。');
 
     ref.onCancel(() {
-      debugPrint('SwitchNotifierSecond: onCancel された（listener が 0）。');
+      debugPrint('counterProvider: onCancel された（listener が 0）。');
     });
 
     ref.onResume(() {
-      debugPrint('SwitchNotifierSecond: onResume された（listener が復活）。');
+      debugPrint('counterProvider: onResume された（listener が復活）。');
     });
 
     ref.onDispose(() {
-      debugPrint('SwitchNotifierSecond: onDispose された。');
+      debugPrint('counterProvider: onDispose された。');
     });
     return 0;
   }
