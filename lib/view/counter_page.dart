@@ -1,4 +1,5 @@
 import 'package:counter_app_riverpod/logic/counter_notifier.dart';
+import 'package:counter_app_riverpod/view/secound_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -43,6 +44,17 @@ class CounterPage extends ConsumerWidget {
             ],
           ),
           SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              // Navigator.pushだと前の画面が消えないため、Disposeされない。
+              // メモリーの解放まで行いたいのであれば、Navigator.pushReplacementを使用する。
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => SecondPage()),
+              );
+            },
+            child: const Text('Second Page'),
+          ),
         ],
       ),
     );
